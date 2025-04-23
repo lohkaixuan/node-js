@@ -42,7 +42,7 @@ class AuthController {
       const token = jwt.sign(
         { id: userData.id, name: userData.name, email: userData.email },
         SECRET_KEY,
-        { expiresIn: "1h" }
+        { expiresIn: "3h" }
       );
       await updateTable("users", {   token }, { id: userData.id });
 
