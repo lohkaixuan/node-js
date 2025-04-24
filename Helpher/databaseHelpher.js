@@ -10,7 +10,7 @@ async function selectFromTable(table, conditions = {}) {
     for (const [key, value] of Object.entries(conditions)) {
         conditionStrings.push(`${key} = $${values.length + 1}`);
         values.push(value);
-    }
+    } 
 
     if (conditionStrings.length > 0) {
         query += " WHERE " + conditionStrings.join(" AND ");
